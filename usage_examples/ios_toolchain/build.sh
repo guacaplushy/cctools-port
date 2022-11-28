@@ -90,7 +90,7 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-TRIPLE="arm-apple-darwin11"
+TRIPLE="aarch64-apple-ios15"
 TARGETDIR="$PWD/target"
 SDKDIR="$TARGETDIR/SDK"
 
