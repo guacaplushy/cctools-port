@@ -154,16 +154,6 @@ elif ! which dsymutil &>/dev/null; then
     echo "int main(){return 0;}" | cc -xc -O2 -o $TARGETDIR/bin/dsymutil -
 fi
 
-verbose_cmd cc -O2 -Wall -Wextra -pedantic wrapper.c \
-    -DSDK_DIR=\"\\\"$WRAPPER_SDKDIR\\\"\" \
-    -DTARGET_CPU=\"\\\"$2\\\"\" \
-    -DOS_VER_MIN=\"\\\"$SDK_VERSION\\\"\" \
-    -o $TARGETDIR/bin/$TRIPLE-clang
-
-pushd $TARGETDIR/bin &>/dev/null
-verbose_cmd ln -sf $TRIPLE-clang $TRIPLE-clang++
-popd &>/dev/null
-
 echo ""
 echo "*** building ldid ***"
 echo ""
