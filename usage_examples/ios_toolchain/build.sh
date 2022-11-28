@@ -90,7 +90,7 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-TRIPLE="aarch64-apple-ios15"
+TRIPLE="aarch64-apple-ios"
 TARGETDIR="$PWD/target"
 SDKDIR="$TARGETDIR/SDK"
 
@@ -140,7 +140,7 @@ which $LLVM_DSYMUTIL &>/dev/null
 if [ $? -eq 0 ]; then
     case $($LLVM_DSYMUTIL --version | \
            grep "LLVM version" | head -1 | awk '{print $3}') in
-        3.8*|3.9*|4.0*|5.0*|6.0*|7.0*|8.0*|9.0*|10*|11*|12*|13*) OK=1 ;;
+        3.8*|3.9*|4.0*|5.0*|6.0*|7.0*|8.0*|9.0*|10*|11*|12*|13*|14*|15*) OK=1 ;;
     esac
 fi
 set -e
